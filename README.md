@@ -1,7 +1,6 @@
-Final Project 3
+# Final Project 3 (Ensemble)
 
-Nama : Nurul Fajriyah Al Maulidiyah
+## Kelompok 3 - PYTN KS 014
 
-Kode : PYTN-KS14-001
-
-Kelas : Python for Data Science
+- Nurul Fajriyah Al Maulidiyah  : PYTN-KS14-001 
+- Fransisca Mulya Sari          : PYTN-KS14-011
