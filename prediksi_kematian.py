@@ -2,8 +2,6 @@ import pickle
 import streamlit as st
 import pandas as pd 
 
-model = pickle.load(open('prediksi_kematian.sav', 'rb'))
-
 st.title("Prediksi Kematian Pasien Penderita Penyakit Kardiovaskular")
 
 # Membagi visualisasi menjadi 3 kolom
@@ -44,7 +42,7 @@ def user_input_features():
 input_df = user_input_features()
 
 heart_dataset = pd.read_csv('heart_failure_clinical_records_dataset.csv')
-heart_dataset = heart_dataset.drop(columns=['DEATH_EVENTS'])
+heart_dataset = heart_dataset.drop(columns=['DEATH_EVENT'])
                                                        
 df = pd.concat([input_df, heart_dataset], axis=0)                                    
 
@@ -55,9 +53,12 @@ df = pd.get_dummies(df, columns=['sex', 'smoking', 'anaemia', 'diabetes', 'high_
 df = df[:]                                   
                                    
 st.write(input_df)
+
+model = pickle.load(open('prediksi_kematian.sav', 'rb'))
                              
 if st.button("Prediksi Kematian Pasien"):
     predict = model.predict(df)
+    predict_proba = model.predict_proba(df)
     if(predict[0]==1):
         death_predict = 'Pasien sudah meninggal sebelum waktu follow-up'
     else:
