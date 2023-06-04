@@ -50,7 +50,7 @@ df = pd.concat([input_df, heart_dataset], axis=0)
 df = pd.get_dummies(df, columns=['sex', 'smoking', 'anaemia', 'diabetes', 'high_blood_pressure'])  
 
 # mengambil hanya baris pertama pada user input data                                   
-df = df[:]                                   
+df = df[:1]                                   
                                    
 st.write(input_df)
 
