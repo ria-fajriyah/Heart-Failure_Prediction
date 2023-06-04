@@ -1,5 +1,6 @@
 import pickle
 import streamlit as st
+import pandas as pd 
 
 model = pickle.load(open('prediksi_kematian.sav', 'rb'))
 
