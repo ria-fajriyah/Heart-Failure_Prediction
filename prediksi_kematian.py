@@ -11,15 +11,15 @@ def user_input_features():
     with col1:
         age = st.number_input('enter your age')
     with col2:
-        sex = st.selectbox('sex:(0=Female, 1=Male)', (0,1))
+        sex = st.selectbox('sex (0=Female, 1=Male)', (0,1))
     with col3:
-        smoking = st.selectbox('do you smoking?:(0=No, 1=Yes)', (0,1))    
+        smoking = st.selectbox('do you smoking? (0=No, 1=Yes)', (0,1))    
     with col1:
-        anaemia = st.selectbox('do you have anaemia?:(0=No, 1=Yes)', (0,1))
+        anaemia = st.selectbox('do you have anaemia? (0=No, 1=Yes)', (0,1))
     with col2:
-        diabetes = st.selectbox('do you have diabetes?:(0=No, 1=Yes)', (0,1))
+        diabetes = st.selectbox('do you have diabetes? (0=No, 1=Yes)', (0,1))
     with col3:
-        high_blood = st.selectbox('do you have high blood pressure:(0=No, 1=Yes)', (0,1))
+        high_blood = st.selectbox('do you have high blood pressure (0=No, 1=Yes)', (0,1))
     with col1:
         cpk = st.number_input('CPK enzyme level (mcg/L)')
     with col2:
@@ -55,7 +55,7 @@ df = df[:]
 st.write(input_df)
 
 model = pickle.load(open('prediksi_kematian.sav', 'rb'))
-                             
+predict = ''                             
 if st.button("Prediksi Kematian Pasien"):
     predict = model.predict(df)
     if(predict[0]==1):
