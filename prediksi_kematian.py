@@ -58,7 +58,6 @@ model = pickle.load(open('prediksi_kematian.sav', 'rb'))
                              
 if st.button("Prediksi Kematian Pasien"):
     predict = model.predict(df)
-    predict_proba = model.predict_proba(df)
     if(predict[0]==1):
         death_predict = 'Pasien sudah meninggal sebelum waktu follow-up'
     else:
