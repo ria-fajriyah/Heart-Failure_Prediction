@@ -2,7 +2,7 @@ import pickle
 import streamlit as st
 import pandas as pd 
 
-st.title("Prediksi Kematian Pasien Penderita Penyakit Kardiovaskular")
+st.title("Prediksi Kematian Pasien Penderita Penyakit Gagal Jantung")
 
 # Membagi visualisasi menjadi 3 kolom
 col1, col2, col3 = st.columns(3)
